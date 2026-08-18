@@ -8,8 +8,8 @@
 
         <div id="boot">
         <h1>NERV</h1>
-        <p>特務機関 ネル</p>
-        <p class="small">loading magi systern...</p>
+        <p>特務機関 ネルフ</p>
+        <p class="small">loading magi systen...</p>
         <p class="small">melchior: ok</p>
         <p class="small">balthasar: ok</p>
         <p class="small">casper: ok</p>
@@ -21,28 +21,35 @@
             <span id="threat">threat: green</span>
         </div>
 
-        <div class="icon" onclick="openWin"('pilot')>
+        <div class="icon" onclick="openWin('pilot')" style="top:70px">
             <div class="ico">👤</div>
-            <p>magi</p>
+            <p>pilot.dat</p>
         </div>
 
-        <div class="icon" onclick="openWin('term')" style="top:240px">
+        <div class="icon" onclick="openWin('magi')" style="top:160px">
+         <div class="ico">🧠</div>
+         <p>magi</p>
+         </div>
+
+
+         <div class="icon" onclick="openWin('term')" style="top:250px">
+
             <div class="ico">▓</div>
             <p>terminal</p>
-        </div>
+         </div>
 
-        <div class="icon" onclick="openWin('log')" style="top:350px">
+         <div class="icon" onclick="openWin('log')" style="top:340px">
             <div class="ico">⚠</div>
             <p>angel.log</p>
-        </div>
+         </div>
 
-        <div class="icon" onclick="openWin('notes')" style="top:460px">
+         <div class="icon" onclick="openWin('notes')" style="top:430px">
             <div class="ico">📄</div>
             <p>notes</p>
         </div>
 
-        <div class="window" id="polot">
-            <div class+bar>
+        <div class="window" id="pilot">
+            <div class="bar">
                 pilot data
                 <span class="x" onclick="closeWin('pilot')">x</span>
             </div>
@@ -60,7 +67,7 @@
         <div class="window" id="magi">
             <div class="bar">
                 magi system
-                <span class="x" onclcik="closeWin('magi')">x</span>
+                <span class="x" onclick="closeWin('magi')">x</span>
             </div>
             <div class="body">
                 <p>マギシステム</p>
@@ -99,7 +106,7 @@
                 <p>[03:15] blood type blue confirmed</p>
                 <p>[03:16] deploying eva units</p>
                 <p>[03:47] target neutralized</p>
-                <p>[04:00] damage: minimal</p></p>
+                <p>[04:00] damage: minimal</p>
             </div>
         </div>
         <div class="window" id="notes">

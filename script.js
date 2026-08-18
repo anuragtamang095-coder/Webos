@@ -5,7 +5,7 @@ setTimeout(function() {
 
 //clock
 function tick() {
-    var d =new Data();
+    var d = new Data();
     var h = d.getHours();
     var m = d.getMinutes();
     document.getElementById('clock').innerHTML = h + ':' + m;
@@ -14,9 +14,16 @@ setInterval(tick, 1000);
 tick();
 
 //window oppen
+var winOffset = 0;
+
 function openWin(id) {
-    document.getElementById(id).style.display='block';
-    document.getElementById('menu').style.display='none';
+    var w = document.getElementById(id);
+    w.style.display = 'block';
+    w.style.left = (200 + winOffset) + 'px';
+    w.style.top = (80 + winOffset) + 'px';
+    winOffset += 30;
+    if (winOffset > 150) winOffset = 0;
+    document.getElementById('menu').style.display = 'none';
 }
 
 //window close
@@ -74,10 +81,15 @@ document.addEventListener('mousedown', function(e){
     }
 });
 
-documen.addEventListener('mousemove', function(e){
+document.addEventListener('mousemove', function(e){
     if(dragging){
-        dragging.style.left= (e.clientX - startX) + 'px';
-        dragging.style.top=(e.clientY - startY) + 'px';
+        var x = (e.clientX - startX);
+        var y =(e.clientY - startY);
+
+        if (x < 0) x=0;
+        if (y < 40) y=40;
+        dragging.style.left = x + 'px';
+        dragging.style.top = y + 'px';
     }
 });
 document.addEventListener('mouseup', function(){
@@ -87,7 +99,7 @@ document.addEventListener('mouseup', function(){
 //terminal commandss
 document.getElementById('cmd').addEventListener('keydown', function(e){
     if(e.key=='Enter'){
-        var input =this.ariaValueMax.toLowerCase().trim();
+        var input =this.value.toLowerCase().trim();
         var out=document.getElementById('out');
         out.innerHTML += '<p>&gt;' + input + '</p>';
         if(input=='help'){
