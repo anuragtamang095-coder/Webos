@@ -155,7 +155,7 @@ textarea {
     border: 3px solid red;
     color: red;
     text-align: center;
-    padding: flex;
+    padding: 30px;
     margin: 150px auto;
     width: 300px;
 }
@@ -209,7 +209,7 @@ textarea {
     bottom: 35px;
     left: 10px;
     background: black;
-    border: 1px solid#ff6600;
+    border: 1px solid #ff6600;
     padding: 10px;
     width: 150px;
 }

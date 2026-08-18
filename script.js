@@ -5,7 +5,7 @@ setTimeout(function() {
 
 //clock
 function tick() {
-    var d = new Data();
+    var d = new Date();
     var h = d.getHours();
     var m = d.getMinutes();
     document.getElementById('clock').innerHTML = h + ':' + m;
@@ -45,7 +45,7 @@ function toggleMenu() {
 function doAlert(){
     document.getElementById('alert').style.display='block';
     document.getElementById('threat').innerHTML='threat: RED';
-    document.getElementById('threat').style.display='red';
+    document.getElementById('threat').style.color='red';
     document.getElementById('menu').style.display='none';
 }
 function stopAlert(){
