@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nerv terminal</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div id="boot">
+        <h1>NERV</h1>
+        <p>特務機関 ネル</p>
+        <p class="small">loading magi systern...</p>
+        <p class="small">melchior: ok</p>
+        <p class="small">balthasar: ok</p>
+        <p class="small">casper: ok</p>
+        </div>
+
+        <div id="topbar">
+            <span>NERV HQ - TOKYO 3</span>
+            <span>sync: <span id="sync">87.3</span>%</span>
+            <span id="threat">threat: green</span>
+        </div>
+
+        <div class="icon" onclick="openWin"('pilot')>
+            <div class="ico">👤</div>
+            <p>magi</p>
+        </div>
+
+        <div class="icon" onclick="openWin('term')" style="top:240px">
+            <div class="ico">▓</div>
+            <p>terminal</p>
+        </div>
+
+        <div class="icon" onclick="openWin('log')" style="top:350px">
+            <div class="ico">⚠</div>
+            <p>angel.log</p>
+        </div>
+
+        <div class="icon" onclick="openWin('notes')" style="top:460px">
+            <div class="ico">📄</div>
+            <p>notes</p>
+        </div>
+
+        <div class="window" id="polot">
+            <div class+bar>
+                pilot data
+                <span class="x" onclick="closeWin('pilot')">x</span>
+            </div>
+            <div class="body">
+            <h2>ANURAG TAMANG</h2>
+            <p>designation: third child</p>
+            <p>unit: eva-01</p>
+            <p>sync rate: 87.3%</p>
+            <p>status: active</p>
+            <br>
+            <p>last mission: stardance</p>
+            </div>
+        </div>
+
+        <div class="window" id="magi">
+            <div class="bar">
+                magi system
+                <span class="x" onclcik="closeWin('magi')">x</span>
+            </div>
+            <div class="body">
+                <p>マギシステム</p>
+                <br>
+                <p>MELCHIOR-1 : online</p>
+                <p>BALTHASAR-2 : online</p>
+                <p>CASPER-3 : online</p>
+                <br>
+                <p>consensus: 100%</p>
+            </div>
+        </div>
+
+        <div class="window" id="term">
+            <div class="bar">
+                terminal
+                <span class="x" onclick="closeWin('term')">x</span>
+            </div>
+            <div class="body" style="background: black">
+                <p>nerv terminal v1</p>
+                <p>type help for commands</p>
+                <div id="out"></div>
+                <div style="display: flex">
+                    <span>&gt;</span>
+                    <input id="cmd" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="log">
+            <div class="bar">
+                angel log
+                <span class="x" onclick="closeWin('log')">x</span>
+            </div>
+            <div class="body">
+                <p>[03:14] unknown pattern detected</p>
+                <p>[03:15] blood type blue confirmed</p>
+                <p>[03:16] deploying eva units</p>
+                <p>[03:47] target neutralized</p>
+                <p>[04:00] damage: minimal</p></p>
+            </div>
+        </div>
+        <div class="window" id="notes">
+            <div class="bar">
+                notes
+                <span class="x" onclick="closeWin('notes')">x</span>
+            </div>
+            <div class="body">
+                <textarea placeholder="write stuff"></textarea>
+            </div>
+        </div>
+
+        <div id="alert">
+            <div id="alertbox">
+                <h1>警告</h1>
+                <h2>WARNING</h2>
+                <p>angel detected</p>
+                <button onclick="stopAlert()">ok</button>
+            </div>
+        </div>
+
+        <div id="taskbar">
+            <button onclick="toggleMenu()">NERV</button>
+            <span id="clock">00:00</span>
+        </div>
+
+        <div id="menu">
+            <p onclick="openWin('pilot')">pilot</p>
+            <p onclick="openWin('magi')">magi</p>
+            <p onclick="openWin('term')">terminal</p>
+            <p onclick="openWin('log')">log</p>
+            <p onclick="openWin('notes')">notes</p>
+            <hr>
+            <p onclick="doAlert()">trigger alert</p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
