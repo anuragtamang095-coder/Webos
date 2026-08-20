@@ -1,0 +1,9 @@
+MAGI-SYS LOG - 03:14 AM
+
+MELCHIOR-1: yes
+BALTHASAR-2: yes  
+CASPER-3: no
+
+consensus: not reached
+decision: overridden by commander ikari
+notes: casper is being difficult again
