@@ -22,30 +22,30 @@ This originally started as my WebOS 1 submission but I rebuilt and upgraded almo
 ## things can be done rn(if nothing broke under my nose)
 
 ### stuff left untouched v1
-- Draggable windows with smooth positioning
+- Draggable windows
 - Start menu and taskbar
 - Live digital clock
-- Dynamically fluctuating sync ratio (fluctuates like mental stability)
-- Functional terminal with interactive commands
+- Fluctuating sync ratio (fluctuates like mental stability)
+- Terminal with commands
 - Emergency Angel alert screen
 - MAGI system boot sequence (Melchior, Balthasar, Casper)
 
 ### stuff in v2
-- Lilith Desktop Wallpaper with a dark overlay to keep UI text sharp and readable
-- Full Sound Effects Engine — UI clicks, an alert siren loop, and boot audio
-- Click-to-Boot Overlay — browsers block autoplay audio by default, so this splash screen unlocks audio while making the startup feel intentional and cinematic
-- Pilot Log (Notes App) — write personal logs that save directly to `localStorage`, so your entries survive page refreshes
-- Classified Filesystem — desktop folder shortcuts that open lore files:
+- Lilith wallpaper with a dark overlay to keep UI text sharp and readable
+- Sound effects UI clicks, an alert siren loop, and boot audio
+- Click-to-Boot overlay browsers block autoplay audio by default, so this splash screen unlocks audio while making the startup feel intentional and cinematic
+- Pilot Log (notes) write personal logs that save directly to `localStorage`, so your entries survive page refreshes
+- Classified filesystem desktop folder shortcuts that open lore files:
   - `angel_rpt.txt`
   - `diary.txt`
   - `scroll_07.txt`
   - `magi.log`
-- Complete Window Controls — ya can minimize to the taskbar, maximize/fullscreen, and close
-- Custom Context Menu — now you can right-click anywhere on the desktop to launch the terminal, trigger alerts, reboot, or shut down
-- Disabled Text Selection across the desktop so it feels like a native OS rather than a webpage
+- Complete window controls ya can minimize to the taskbar, maximize/fullscreen, and close
+- Custom context menu now you can right-click anywhere on the desktop to launch the terminal, trigger alerts, reboot, or shut down
+- Disabled text selection across the desktop so it feels like a native OS rather than a webpage
 
 ### cool stuff
-- Eva Launch Sequence by typing `launch` into the terminal triggers a fullscreen Unit-01 deployment screen with live diagnostic logs and a staged percentage counter
+- Eva launch sequence by typing `launch` into the terminal triggers a fullscreen Unit-01 deployment screen with live diagnostic logs and a staged percentage counter
 - MAGI Override Consensus clicking OK during an Angel alert initiates a real-time vote between Melchior, Balthasar, and Casper before clearing the threat
 
 ---
