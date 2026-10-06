@@ -11,7 +11,7 @@ https://anuragtamang095-coder.github.io/Webos/
 
 A little about project
 
-It’s a retro futuristic desktop environment running directly in the browser. 
+It’s a desktop environment running directly in the browser. 
 
 You boot it up, drag windows around, type commands into a terminal, trigger emergency Angel alerts, dig through classified lore files, write persistent pilot notes, minimize apps to the taskbar, and initiate complete system shutdowns.
 
@@ -22,7 +22,7 @@ This originally started as my WebOS 1 submission but I rebuilt and upgraded almo
 ## things can be done rn(if nothing broke under my nose)
 
 ### stuff left untouched v1
-- Draggable windows
+- Windows can be dragged now
 - Start menu and taskbar
 - Live digital clock
 - Fluctuating sync ratio (fluctuates like mental stability)
@@ -30,7 +30,7 @@ This originally started as my WebOS 1 submission but I rebuilt and upgraded almo
 - Emergency Angel alert screen
 - MAGI system boot sequence (Melchior, Balthasar, Casper)
 
-### stuff in v2
+### new stuff added in v2
 - Lilith wallpaper with a dark overlay to keep UI text sharp and readable
 - Sound effects UI clicks, an alert siren loop, and boot audio
 - Click-to-Boot overlay browsers block autoplay audio by default, so this splash screen unlocks audio while making the startup feel intentional and cinematic
@@ -52,13 +52,13 @@ This originally started as my WebOS 1 submission but I rebuilt and upgraded almo
 
 ## Terminal commands to try(it ain't much but its an honest work)
 
-- `help` — view available commands
-- `status` — check system diagnostics
-- `launch` — trigger the Unit-01 deployment sequence
-- `alert` — initiate the Angel emergency protocol
-- `sync` — display current pilot sync rate
-- `whoami` — inspect current credentials
-- `clear` — wipe the terminal screen
+- `help`  view available commands
+- `status`  check system diagnostics
+- `launch`  trigger the Unit-01 deployment sequence
+- `alert`  initiate the Angel emergency protocol
+- `sync`  display current pilot sync rate
+- `whoami`  inspect current credentials
+- `clear`  wipe the terminal screen
 - `get in the robot` — Shinji, please
 
 ---
