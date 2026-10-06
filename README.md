@@ -11,7 +11,7 @@ https://anuragtamang095-coder.github.io/Webos/
 
 A little about project
 
-It’s a retro-futuristic desktop environment running directly in the browser. 
+It’s a retro futuristic desktop environment running directly in the browser. 
 
 You boot it up, drag windows around, type commands into a terminal, trigger emergency Angel alerts, dig through classified lore files, write persistent pilot notes, minimize apps to the taskbar, and initiate complete system shutdowns.
 
@@ -30,7 +30,7 @@ This originally started as my WebOS 1 submission but I rebuilt and upgraded almo
 - Emergency Angel alert screen
 - MAGI system boot sequence (Melchior, Balthasar, Casper)
 
-### NeW in v2
+### stuff in v2
 - Lilith Desktop Wallpaper with a dark overlay to keep UI text sharp and readable
 - Full Sound Effects Engine — UI clicks, an alert siren loop, and boot audio
 - Click-to-Boot Overlay — browsers block autoplay audio by default, so this splash screen unlocks audio while making the startup feel intentional and cinematic
@@ -45,8 +45,8 @@ This originally started as my WebOS 1 submission but I rebuilt and upgraded almo
 - Disabled Text Selection across the desktop so it feels like a native OS rather than a webpage
 
 ### cool stuff
-- Eva Launch Sequence — typing `launch` into the terminal triggers a fullscreen Unit-01 deployment screen with live diagnostic logs and a staged percentage counter
-- MAGI Override Consensus — clicking OK during an Angel alert initiates a real-time vote between Melchior, Balthasar, and Casper before clearing the threat
+- Eva Launch Sequence by typing `launch` into the terminal triggers a fullscreen Unit-01 deployment screen with live diagnostic logs and a staged percentage counter
+- MAGI Override Consensus clicking OK during an Angel alert initiates a real-time vote between Melchior, Balthasar, and Casper before clearing the threat
 
 ---
 
