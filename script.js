@@ -10,8 +10,8 @@ function playSound(soundId) {
 // hide boot screen
 playSound('boot-sound');
 
-setTimeout(function() {
-    document.getElementById('boot').style.display='none';
+setTimeout(function () {
+    document.getElementById('boot').style.display = 'none';
 }, 4000);
 
 //clock
@@ -41,7 +41,7 @@ function openWin(id) {
 //window close
 function closeWin(id) {
     playSound('click-sound');
-    document.getElementById(id).style.display='none';
+    document.getElementById(id).style.display = 'none';
 
     var index = minimizedWindow.indexOf(id);
     if (index > -1) {
@@ -52,115 +52,123 @@ function closeWin(id) {
 
 // start menu
 function toggleMenu() {
-    var m=document.getElementById('menu');
-    if (m.style.display == 'block'){
-        m.style.display='none';
-    } else{
-        m.style.display='block';
+    var m = document.getElementById('menu');
+    if (m.style.display == 'block') {
+        m.style.display = 'none';
+    } else {
+        m.style.display = 'block';
     }
 }
 
 //alert
-function doAlert(){
+function doAlert() {
     var alertSound = document.getElementById('alert-sound');
     alertSound.loop = true;
     alertSound.currentTime = 0;
     alertSound.play();
 
-    document.getElementById('alert').style.display='block';
-    document.getElementById('threat').innerHTML='threat: RED';
-    document.getElementById('threat').style.color='red';
-    document.getElementById('menu').style.display='none';
+    document.getElementById('alert').style.display = 'block';
+    document.getElementById('threat').innerHTML = 'threat: RED';
+    document.getElementById('threat').style.color = 'red';
+    document.getElementById('menu').style.display = 'none';
 }
-function stopAlert(){
+function stopAlert() {
     var alertSound = document.getElementById('alert-sound');
     alertSound.pause();
     alertSound.currentTime = 0;
     alertSound.loop = false;
 
-    document.getElementById('alert').style.display='none';
-    document.getElementById('threat').innerHTML='threat: green';
-    document.getElementById('threat').style.color='#ff6600';
+    document.getElementById('alert').style.display = 'none';
+    document.getElementById('threat').innerHTML = 'threat: green';
+    document.getElementById('threat').style.color = '#ff6600';
 }
 
 //sync thing
-setInterval(function() {
-    var n =85 + Math.random() * 5;
-    document.getElementById('sync').innerHTML=n.toFixed(1);
+setInterval(function () {
+    var n = 85 + Math.random() * 5;
+    document.getElementById('sync').innerHTML = n.toFixed(1);
 }, 3000);
 
 //making windows draggable..(ToT) took me forevr to get ti to work
-var dragging=null;
-var startX=0;
-var startY=0;
-document.addEventListener('mousedown', function(e){
-    if (e.target.className =='x' || e.target.className =='min' || e.target.className =='max'){
+var dragging = null;
+var startX = 0;
+var startY = 0;
+document.addEventListener('mousedown', function (e) {
+    if (e.target.className == 'x' || e.target.className == 'min' || e.target.className == 'max') {
         return;
     }
     var bar = null;
-    if(e.target.className =='bar'){
+    if (e.target.className == 'bar') {
         bar = e.target;
-    } else if(e.target.parentElement && e.target.parentElement.className =='bar'){
+    } else if (e.target.parentElement && e.target.parentElement.className == 'bar') {
         bar = e.target.parentElement;
     }
-    if (bar){
+    if (bar) {
         dragging = bar.parentElement;
         startX = e.clientX - dragging.offsetLeft;
         startY = e.clientY - dragging.offsetTop;
     }
 });
 
-document.addEventListener('mousemove', function(e){
-    if(dragging){
+document.addEventListener('mousemove', function (e) {
+    if (dragging) {
         var x = (e.clientX - startX);
-        var y =(e.clientY - startY);
+        var y = (e.clientY - startY);
 
-        if (x < 0) x=0;
-        if (y < 40) y=40;
+        if (x < 0) x = 0;
+        if (y < 40) y = 40;
         dragging.style.left = x + 'px';
         dragging.style.top = y + 'px';
     }
 });
-document.addEventListener('mouseup', function(){
-    dragging=null;
+document.addEventListener('mouseup', function () {
+    dragging = null;
 });
 
 //terminal commandss
-document.getElementById('cmd').addEventListener('keydown', function(e){
-    if(e.key=='Enter'){
-        var input =this.value.toLowerCase().trim();
-        var out=document.getElementById('out');
+document.getElementById('cmd').addEventListener('keydown', function (e) {
+    if (e.key == 'Enter') {
+        var input = this.value.toLowerCase().trim();
+        var out = document.getElementById('out');
         out.innerHTML += '<p>&gt;' + input + '</p>';
-        if(input=='help'){
-            out.innerHTML += '<p>commands: help, status, launch, alert, sync, whoami, clear</p>';
+        if (input == 'help') {
+            out.innerHTML += '<p>commands: help, status, launch, alert, sync, combat, comms, whoami, clear</p>';
         }
-        else if (input == 'status'){
+        else if (input == 'status') {
             out.innerHTML += '<p>all systems ok</p>';
         }
-        else if (input == 'launch'){
+        else if (input == 'combat') {
+            openWin('combat');
+            out.innerHTML += '<p>launching eva combat simulator...</p>';
+        }
+        else if (input == 'comms') {
+            openWin('comms');
+            out.innerHTML += '<p>opening tactical comms link...</p>';
+        }
+        else if (input == 'launch') {
             out.innerHTML += '<p>eva unit launching...</p>';
             startLaunch();
         }
-        else if (input == 'alert'){
+        else if (input == 'alert') {
             doAlert();
-            out.innerHTML +='<p>alert triggered</p>';
+            out.innerHTML += '<p>alert triggered</p>';
         }
-        else if (input=='sync'){
-            out.innerHTML +='<p>sync ratio: ' + (85 +Math.random() * 10).toFixed(1) + '%</p>';
+        else if (input == 'sync') {
+            out.innerHTML += '<p>sync ratio: ' + (85 + Math.random() * 10).toFixed(1) + '%</p>';
         }
-        else if(input =='whoami'){
+        else if (input == 'whoami') {
             out.innerHTML += '<p>anurag - third child</p>';
         }
-        else if (input == 'clear'){
-            out.innerHTML='';
+        else if (input == 'clear') {
+            out.innerHTML = '';
         }
-        else if (input == 'get in the robot'){
+        else if (input == 'get in the robot') {
             out.innerHTML += '<p>i mustnt run away</p>';
         }
         else {
             out.innerHTML += '<p>unknown: ' + input + '</p>';
         }
-        this.value='';
+        this.value = '';
     }
 });
 
@@ -169,7 +177,7 @@ function startOS() {
     playSound('boot-sound');
 }
 
-document.addEventListener('contextmenu', function(e) {
+document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
     var menu = document.getElementById('right-menu');
     menu.style.display = 'block';
@@ -177,7 +185,7 @@ document.addEventListener('contextmenu', function(e) {
     menu.style.top = e.clientY + 'px';
 });
 
-document.addEventListener('click', function() {
+document.addEventListener('click', function () {
     document.getElementById('right-menu').style.display = 'none';
 });
 
@@ -207,7 +215,7 @@ function saveNote() {
 
     var now = new Date();
     var timeStr = now.getHours() + ':' +
-                  (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+        (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
     notes.push({
         text: text,
         time: timeStr
@@ -291,7 +299,7 @@ var maximizeState = {};
 
 function minWin(id) {
     playSound('click-sound');
-    var w =document.getElementById(id);
+    var w = document.getElementById(id);
     w.style.display = 'none';
 
     if (minimizedWindow.indexOf(id) == -1) {
@@ -361,7 +369,7 @@ function shutdownOS() {
     overlay.style.position = 'fixed';
     overlay.style.inset = '0';
     overlay.style.background = 'black';
-    overlay.style.color = '#ff6600'; 
+    overlay.style.color = '#ff6600';
     overlay.style.zIndex = '999999';
     overlay.style.display = 'flex';
     overlay.style.flexDirection = 'column';
@@ -400,7 +408,7 @@ function startLaunch() {
 
     var logIndex = 0;
 
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
         percent += 4;
         if (percent > 100) percent = 100;
         progress.innerHTML = percent + '%';
@@ -417,7 +425,7 @@ function startLaunch() {
 
         if (percent >= 100) {
             clearInterval(interval);
-            setTimeout(function() {
+            setTimeout(function () {
                 overlay.style.display = 'none';
             }, 1500);
         }
@@ -440,23 +448,78 @@ function magiOverride() {
 
     var votes = document.getElementById('magi-votes');
 
-    setTimeout(function() {
+    setTimeout(function () {
         votes.innerHTML += '<p>MELCHIOR-1: <span style="color:#00ff00">OVERRIDE APPROVED</span></p>';
         playSound('click-sound');
     }, 500);
 
-    setTimeout(function() {
+    setTimeout(function () {
         votes.innerHTML += '<p>BALTHASAR-2: <span style="color:#00ff00">OVERRIDE APPROVED</span></p>';
     }, 1000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         votes.innerHTML += '<p>CASPER-3: <span style="color:#00ff00">OVERRISD APPROVED</span></p>';
         playSound('click-sound');
     }, 2000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         stopAlert();
 
         alertbox.innerHTML = originalHTML;
     }, 2800);
+}
+
+
+//mini game stuff
+var angelHp = 100;
+var evaHp = 100;
+
+function attackAngel() {
+    if (angelHp <= 0 || evaHp <= 0) {
+        document.getElementById('game-log').innerHTML = "battle ended! reset.";
+        return;
+    }
+
+    playSound('click-sound');
+
+    var dmg = Math.floor(Math.random() * 16) + 10;
+    angelHp = angelHp - dmg;
+    if (angelHp < 0) angelHp = 0;
+
+    var enemyDmg = Math.floor(Math.random() * 11) + 5;
+    evaHp = evaHp - enemyDmg;
+    if (evaHp < 0) evaHp = 0;
+
+    document.getElementById('angel-hp').innerHTML = angelHp;
+    document.getElementById('eva-hp').innerHTML = evaHp;
+    document.getElementById('game-log').innerHTML = "you did" + dmg + "dmg and Took" + enemyDmg + "dmg";
+    if (angelHp <= 0) {
+        document.getElementById('game-status').innerHTML = "angel defeated";
+        document.getElementById('game-log').innerHTML = "Mission sucessful";
+    } else if (evaHp <= 0) {
+        document.getElementById('game-status').innerHTML = "Eva-01 Destroyed";
+        document.getElementById('game-log').innerHTML = "Game overr";
+    }
+}
+
+function repairEva() {
+    if (evaHp <= 0 || angelHp <= 0) return;
+
+    playSound('click-sound');
+    evaHp = evaHp + 30;
+    if (evaHp > 100) evaHp = 100;
+    document.getElementById('eva-hp').innerHTML = evaHp;
+    document.getElementById('game-log').innerHTML = "Repaired Eva-10 you healed 30 health points.";
+
+}
+
+function resetGame() {
+    playSound('click-sound');
+    angelHp = 100;
+    evaHp = 100;
+    document.getElementById('angel-hp').innerHTML = 100;
+    document.getElementById('eva-hp').innerHTML = 100;
+    document.getElementById('game-status').innerHTML = "TARGET: SACHIEL";
+    document.getElementById('game-log').innerHTML = "Ready to engage in battle...";
+
 }

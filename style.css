@@ -55,7 +55,7 @@ body::before {
     font-size: 12px;
 }
 
-#topbar > span {
+#topbar>span {
     margin-right: 30px;
 }
 
@@ -70,7 +70,7 @@ body::before {
 }
 
 .icon:hover {
-    background: rgba(255,120,0,0.2);
+    background: rgba(255, 120, 0, 0.2);
 }
 
 .ico {
@@ -106,13 +106,13 @@ body::before {
 }
 
 .x {
-   cursor: pointer;
-   padding: 0 8px;
-   background: black;
-   color: #ff6600;
-   display: inline-block;
-   font-weight: bold;
-   user-select: none;
+    cursor: pointer;
+    padding: 0 8px;
+    background: black;
+    color: #ff6600;
+    display: inline-block;
+    font-weight: bold;
+    user-select: none;
 }
 
 .x:hover {
@@ -164,7 +164,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255,0,0,0.3);
+    background: rgba(255, 0, 0, 0.3);
     z-index: 500;
 }
 
@@ -209,9 +209,9 @@ textarea {
 
 #taskbar button {
     background: #ff6600;
-    color:black;
-    border:none;
-    padding:5px 15px;
+    color: black;
+    border: none;
+    padding: 5px 15px;
     cursor: pointer;
     font-weight: bold;
     font-family: 'Courier New', monospace;
@@ -243,7 +243,7 @@ textarea {
 
 #menu p:hover {
     background: #ff6600;
-    color:black;
+    color: black;
 }
 
 #start-overlay {
@@ -284,7 +284,8 @@ textarea {
     color: black;
 }
 
-input, textarea {
+input,
+textarea {
     user-select: text;
     -webkit-user-select: text;
 }
@@ -367,7 +368,8 @@ input, textarea {
     gap: 3px;
 }
 
-.min, .max {
+.min,
+.max {
     cursor: pointer;
     padding: 0 8px;
     background: black;
@@ -377,7 +379,8 @@ input, textarea {
     user-select: none;
 }
 
-.min:hover, .max:hover {
+.min:hover,
+.max:hover {
     background: #ff6600;
     color: black;
 }
@@ -407,7 +410,7 @@ input, textarea {
 #launch-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.95);
     border: 4px solid #ff3300;
     z-index: 99999;
     display: flex;
@@ -443,4 +446,44 @@ input, textarea {
 
 #launch-log p {
     margin: 5px 0;
+}
+
+/*the buttons for game*/
+.game-btn {
+    background: black;
+    color: #ff6600;
+    border: 1px solid #ff6600;
+    padding: 6px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.game-btn:hover {
+    background: #ff6600;
+    color: black;
+}
+
+#chat-box {
+    height: 160px;
+    background: black;
+    border: 1px solid #ff6600;
+    padding: 8px;
+    overflow-y: auto;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 5px;
+
+}
+
+#chat-input {
+    flex: 1;
+    background: black;
+    color: #ff6600;
+    border: qpx solid #ff6600;
+    font-family: 'Courier New', monospace;
+    padding: 5px 8px;
+    font-size: 12px;
+    outline: none;
 }
