@@ -26,6 +26,7 @@ tick();
 
 //window oppen
 var winOffset = 0;
+var minimizedWindow = [];
 
 function openWin(id) {
     playSound('click-sound');
@@ -138,11 +139,11 @@ document.getElementById('cmd').addEventListener('keydown', function (e) {
             out.innerHTML += '<p>all systems ok</p>';
         }
         else if (input == 'combat') {
-            openWin('combat');
+            openWin('game');
             out.innerHTML += '<p>launching eva combat simulator...</p>';
         }
         else if (input == 'comms') {
-            openWin('comms');
+            openWin('chat');
             out.innerHTML += '<p>opening tactical comms link...</p>';
         }
         else if (input == 'launch') {
@@ -294,7 +295,7 @@ function openFile(fileId) {
     if (winOffset > 150) winOffset = 0;
 }
 
-var minimizedWindow = [];
+
 var maximizeState = {};
 
 function minWin(id) {
@@ -361,7 +362,7 @@ function restoreWin(id) {
 }
 
 function shutdownOS() {
-    playSound('click-sound')
+    playSound('click-sound');
 
     window.close();
 
@@ -377,7 +378,7 @@ function shutdownOS() {
     overlay.style.justifyContent = 'center';
     overlay.style.fontFamily = 'monospace';
 
-    overlay.innerHTML = '<h1>SYSTEM SHUTDOWN</h1><p>LCL drained. Synaptic link disconnected.<p/><p style="color:#555; font-size:12px; margin-top:20px;">[Safe to close tab manually]</p>';
+    overlay.innerHTML = '<h1>SYSTEM SHUTDOWN</h1><p>LCL drained. Synaptic link disconnected.</p><p style="color:#555; font-size:12px; margin-top:20px;">[Safe to close tab manually]</p>';
 
     document.body.appendChild(overlay);
 }
@@ -509,7 +510,7 @@ function repairEva() {
     evaHp = evaHp + 30;
     if (evaHp > 100) evaHp = 100;
     document.getElementById('eva-hp').innerHTML = evaHp;
-    document.getElementById('game-log').innerHTML = "Repaired Eva-10 you healed 30 health points.";
+    document.getElementById('game-log').innerHTML = "Repaired Eva-01 you healed 30 health points.";
 
 }
 
@@ -522,4 +523,38 @@ function resetGame() {
     document.getElementById('game-status').innerHTML = "TARGET: SACHIEL";
     document.getElementById('game-log').innerHTML = "Ready to engage in battle...";
 
+}
+function sendChat() {
+    var input = document.getElementById('chat-input');
+    var msg = input.value.trim();
+
+    if (msg == '') return;
+
+    playSound('click-sound');
+
+    var chatBox = document.getElementById('chat-box');
+    chatBox.innerHTML += '<p style="color:#ffffff">PILOT: ' + msg + '</p>';
+    input.value = '';
+
+    setTimeout(function () {
+        var replies = [
+            "MELCHIOR-1: ANALYSIS CONFIRMED.",
+            "BALTHASAR-2: PROBABILITY WITHIN TOLERANCE.",
+            "CASPER-3: PATTERN BLUE NOT DETECTED.",
+            "MAGI CONSENSUS: PROCEED WITH CAUTION."
+        ];
+        var randomReply = replies[Math.floor(Math.random() * replies.length)];
+        chatBox.innerHTML += '<p style="color:#00ff66">' + randomReply + '</p>';
+        playSound('click-sound');
+    }, 600);
+}
+
+
+var chatInputEl = document.getElementById('chat-input');
+if (chatInputEl) {
+    chatInputEl.addEventListener('keydown', function (e) {
+        if (e.key == 'Enter') {
+            sendChat();
+        }
+    })
 }
